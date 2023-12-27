@@ -38,6 +38,8 @@ variable "cluster_config" {
     enabled_cloudwatch_logs_exports = optional(list(string))
     db_cluster_instance_class       = optional(string)
     is_secondary                    = optional(bool, false)
+    db_subnet_group_name            = optional(string)
+    vpc_security_group_ids          = optional(list(string))
   })
   default     = null
   description = <<EOF
@@ -368,4 +370,21 @@ The supported attributes are:
   - parameters.value: (Required) The value of the DB parameter.
   - parameters.apply_method: (Optional) Indicates when to apply parameter updates. Can be immediate or pending-reboot. Default is pending-reboot.
 EOF
+}
+
+variable "db_subnet_group_name" {
+  type        = string
+  description = "DB subnet group to associate with this DB cluster."
+}
+
+variable "vpc_security_group_ids" {
+  type        = list(string)
+  description = "List of VPC security groups to associate with the Aurora PostgreSQL DB cluster."
+  default     = []
+}
+
+variable "security_group_ids" {
+  description = "IDs de los grupos de seguridad VPC a asociar con el RDS PostgreSQL."
+  type        = list(string)
+  default     = []
 }
