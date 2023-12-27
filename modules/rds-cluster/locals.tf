@@ -52,7 +52,7 @@ locals {
       db_cluster_instance_class = var.cluster_config.db_cluster_instance_class == null ? null : trimspace(var.cluster_config.db_cluster_instance_class)
       is_secondary              = var.cluster_config.is_secondary == null ? false : var.cluster_config.is_secondary
       vpc_security_group_ids = length(var.security_group_ids) == 0 ? null : var.security_group_ids
-      db_subnet_group_name  = var.cluster_config.subnet_group_name == null ? null : var.cluster_config.subnet_group_name
+      db_subnet_group_name  = var.cluster_config.db_subnet_group_name == null ? null : var.cluster_config.db_subnet_group_name
     }
   ]
 
