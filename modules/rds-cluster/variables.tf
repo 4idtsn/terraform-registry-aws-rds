@@ -38,7 +38,6 @@ variable "cluster_config" {
     enabled_cloudwatch_logs_exports = optional(list(string))
     db_cluster_instance_class       = optional(string)
     is_secondary                    = optional(bool, false)
-    db_subnet_group_name            = optional(string)
     vpc_security_group_ids          = optional(list(string))
   })
   default     = null
