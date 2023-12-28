@@ -65,7 +65,7 @@ variable "cluster_backup_config" {
   type = object({
     cluster_identifier        = string
     backup_retention_period   = optional(number, 5)
-    preferred_backup_window   = optional(string, "07:00-09:00")
+    preferred_backup_window   = optional(string, "08:00-10:00")
     skip_final_snapshot       = optional(bool, true)
     final_snapshot_identifier = optional(string)
     copy_tags_to_snapshot     = optional(bool, false)
