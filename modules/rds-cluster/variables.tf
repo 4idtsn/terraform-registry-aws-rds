@@ -371,11 +371,6 @@ The supported attributes are:
 EOF
 }
 
-variable "db_subnet_group_name" {
-  type        = string
-  description = "DB subnet group to associate with this DB cluster."
-}
-
 variable "vpc_security_group_ids" {
   type        = list(string)
   description = "List of VPC security groups to associate with the Aurora PostgreSQL DB cluster."
